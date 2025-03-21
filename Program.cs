@@ -2,6 +2,7 @@
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.ComponentModel;
 using System.Net.Mime;
+using System.Security.Cryptography.X509Certificates;
 namespace CSharpFuncamentals
 {
     class Program
@@ -80,6 +81,48 @@ namespace CSharpFuncamentals
             //}
             //Console.WriteLine(longestWord);
 
+
+            //**********************Debugging************
+
+            //    var numbers = new List<int> { 1, 2};
+            //    var smallests = GetSmallests(numbers, 3);
+
+            //    foreach (var number in smallests)
+            //    {
+            //        Console.WriteLine(number);
+            //    }
+
+
+            //}
+
+            //public static List<int> GetSmallests(List<int> list, int count)
+            //{
+            //    var tempList = new List<int>(list); // Make a copy of the list to avoid modifying the original
+            //    var smallests = new List<int>();
+
+            //    while (smallests.Count < count && tempList.Count > 0)
+            //    {
+            //        var min = tempList.Min(); // Get the smallest value
+            //        smallests.Add(min);
+            //        tempList.Remove(min); // Remove the smallest value from tempList
+            //    }
+
+            //    return smallests;
+
+
+
+
+            //*************** String InterPolation **************
+            int n1 = 10;
+            int n2 = 30;
+            string s = "";
+            Console.WriteLine("Sum : " + (n1+n2));  // We need use the bracket for the addition otherwise it'll only concatenate the numbers.
+
+            Console.WriteLine("The sum of {0} and {1} is {2}",n1,n2,n1+n2);//preferable
+
+            // String interpolation
+            Console.WriteLine($"The sum of {n1} and {n2} using INTERPOLATION is {n1 + n2}");
+            Console.WriteLine(string.IsNullOrEmpty(s));
 
         }
     }
