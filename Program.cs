@@ -5,8 +5,8 @@ using System.Net.Mime;
 using System.Security.Cryptography.X509Certificates;
 namespace CSharpFuncamentals
 {
-    class Program
-    {
+    //class Program
+    //{
         // static void Main(string[] args)
         // {
 
@@ -237,35 +237,112 @@ namespace CSharpFuncamentals
             
 
         //}
-        static void Main(string[] args)
+        //static void Main(string[] args)
+        //{
+        //    var sentence = "This is going to bea really really really really long text...";
+        //    const int maxLength = 20;
+
+        //    if(sentence.Length < maxLength)
+        //    {
+        //        Console.WriteLine(sentence);
+        //    }
+        //    else
+        //    {
+        //        var words = sentence.Split(' ');
+        //        var totalcharacters = 0;
+        //        var summarywords = new List<string>();
+        //        foreach(var word in words)
+        //        {
+        //            summarywords.Add(word);
+        //            totalcharacters += word.Length + 1;
+        //            if(totalcharacters > maxLength)
+        //            {
+        //                break;
+        //            }
+
+        //        }
+        //        var summary = string.Join(" ", summarywords) + "...";
+        //        Console.WriteLine(summary);
+        //    }
+        //}
+
+        //
+
+
+    //}
+       
+
+    //********* Inheritance (Diaond Problem)    //class Program
+    //{
+    //    class A
+    //    {
+    //        public virtual void Print()
+    //        {
+    //            Console.WriteLine("A Implementation");
+
+    //        }
+
+    //    }
+    //    class B : A
+    //    {
+    //        public override void Print()
+    //        {
+    //            Console.WriteLine("B Implementation");
+    //        }
+    //    }
+    //    class C : A
+    //    {
+    //        public override void Print()
+    //        {
+    //            Console.WriteLine("C Implementation");
+    //        }
+    //    }
+    //    class D : B, C
+    //    {
+
+    //    }
+    //    public static void Main()
+    //    {
+    //        D d = new D();
+    //        d.Print();
+    //    }
+    //}
+
+    public class Employee
+    {
+        public string FirstName;
+        public string LastName;
+
+        public void PrintFullName()
         {
-            var sentence = "This is going to bea really really really really long text...";
-            const int maxLength = 20;
-
-            if(sentence.Length < maxLength)
-            {
-                Console.WriteLine(sentence);
-            }
-            else
-            {
-                var words = sentence.Split(' ');
-                var totalcharacters = 0;
-                var summarywords = new List<string>();
-                foreach(var word in words)
-                {
-                    summarywords.Add(word);
-                    totalcharacters += word.Length + 1;
-                    if(totalcharacters > maxLength)
-                    {
-                        break;
-                    }
-
-                }
-                var summary = string.Join(" ", summarywords) + "...";
-                Console.WriteLine(summary);
-            }
+            Console.WriteLine(FirstName + " " + LastName);
         }
+    }
+    public class FullTimeEmployee : Employee
+    {
 
-        
+    }
+    public class PartTimeEmployee : Employee
+    {
+        public new void PrintFullName()
+        {
+            Console.WriteLine(FirstName + " " + LastName + " - Contractor");
+        }
+    }
+
+    public class Program
+    {
+        public static void Main()
+        {
+            FullTimeEmployee FTE = new FullTimeEmployee();
+            FTE.FirstName = "Akshay";
+            FTE.LastName = "Dhumal";
+            FTE.PrintFullName();
+
+            PartTimeEmployee PTE = new PartTimeEmployee();
+            PTE.FirstName = "Atharva";
+            PTE.LastName = "Shinde";
+            PTE.PrintFullName();
+        }
     }
 }
